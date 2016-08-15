@@ -55,6 +55,7 @@ namespace KetNoiDauSo.code.lib
         {
             IEnumerable<KeyValuePair<string, string>> queries = new List<KeyValuePair<string, string>>()
             {
+                 new KeyValuePair<string, string>("format", "json"),
                 new KeyValuePair<string, string>("mo_id", moId),
                 new KeyValuePair<string, string>("content", contentSMS),
                 new KeyValuePair<string, string>("service_number", serviceNumber),
