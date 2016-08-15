@@ -1,0 +1,78 @@
+﻿<header>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p class="site-title">
+                <a href="~/">Tài liệu hướng dẫn kết nối dịch vụ đầu số</a></p>
+        </div>
+    </div>
+</header>
+<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Các chức năng của dịch vụ</h1>
+            </hgroup>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        <h3>Chúng ta có 3 phần</h3>
+        <ol class="round">
+            <li class="one">
+                <h5>Bật dịch vụ</h5>
+                <table>
+                    <tr>
+                        <td>URL</td>
+                        <td>http://localhost:[port]/api/sms/onService</td>
+                    </tr>
+                    <tr>
+                        <td>Method</td>
+                        <td>GET</td>
+                    </tr>
+                    <tr>
+                        <td>username</td>
+                        <td>Tài khoản khách hàng được cấp</td>
+                    </tr>
+                </table>
+            </li>
+            <li class="two">
+                <h5>Nhận MO</h5>
+                Service nhận Mo đã được xây dựng
+                <table>
+                    <tr>
+                        <td>URL</td>
+                        <td>http://localhost:[port]/api/sms/getMO</td>
+                    </tr>
+                    <tr>
+                        <td>Method</td>
+                        <td>GET</td>
+                    </tr>
+                    <tr>
+                        <td>phone</td>
+                        <td>Số điện thoại nhắn tin lên</td>
+                    </tr>
+                    <tr>
+                        <td>content</td>
+                        <td>Nội dung tin nhắn gửi lên</td>
+                    </tr>
+                    <tr>
+                        <td>service_number</td>
+                        <td>Đầu số gửi lên</td>
+                    </tr>
+                    <tr>
+                        <td>mo_id</td>
+                        <td>Định danh duy nhất của MO tương ứng</td>
+                    </tr>
+                    <tr>
+                        <td>card_id</td>
+                        <td>loại mạng của thuê bao (1: Viettel; 2: Vinaphone; 3: Mobifone).</td>
+                    </tr>
+                </table>
+            </li>
+
+            <li class="three">
+                <h5>Gửi SMS cho khách hàng</h5>
+                Tin nhắn đã được gửi tới khách hàng, truy cập http://localhost:[port]/api/sms/getSMSText để kiểm tra
+            </li>
+        </ol>
+    </section>
+</div>
