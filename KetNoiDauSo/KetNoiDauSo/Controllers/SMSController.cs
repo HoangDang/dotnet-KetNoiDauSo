@@ -27,11 +27,12 @@ namespace KetNoiDauSo.Controllers
             }
         }
 
-        public string Get(string id, string username)
+        public string Get(string id, string username, string secret_key)
         {
             if (username != null && username.Length > 0)
             {
                 System.IO.File.WriteAllText(@"C:\Users\user_ket_noi_dau_so.txt", username);
+                System.IO.File.WriteAllText(@"C:\Users\key_secret_ket_noi_dau_so.txt", secret_key);
                 return "{\"status\": 1, \"msg\":\"dịch vụ đã được bật bởi " + username + "\"}";
             }
             else
@@ -90,7 +91,9 @@ namespace KetNoiDauSo.Controllers
             if (username != null && username.Length > 0)
             {
                 string keyUnique = RandomString(20);
-                string sign = "";
+                string strSign = mo_id + username + content + keyUnique + card_id;
+                string key_secret = System.IO.File.ReadAllText(@"C:\Users\key_secret_ket_noi_dau_so.txt");
+                string sign = GetMd5Hash(GetMd5Hash(strSign) + GetMd5Hash(key_secret));
 
                 HttpResponse<String> response = Unirest.post("http://115.84.178.122:789/api_connect/sendSMSText")
                     .header("accept", "application/json")
